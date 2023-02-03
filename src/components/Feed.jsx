@@ -6,7 +6,7 @@ import { fetchFromAPI } from '../utils/fetchFromAPI';
 
 const Feed = () => {
   const [selectedCategory, setSelectedCategory] = useState("New");
-  const [videos, setVideos] = useState(null);
+  const [videos, setVideos] = useState([]);
 
   useEffect(() => {
     setVideos(null);
@@ -20,7 +20,7 @@ const Feed = () => {
       <Box sx={{ height: {sx: 'auto', md:'92vh'}, borderRight: "1px solid #3d3d3d", px: { sx: 0, md: 2 } }}>
       <Sidebar selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
       <Typography className="copyright" variant="body2" sx={{ mt: 1.5, color: "#fff", }}>
-          Copyright © 2022 JSM Media
+          Copyright © 2022 KN DEV Media
         </Typography>
       </Box>
 
@@ -29,7 +29,7 @@ const Feed = () => {
           {selectedCategory} <span style={{ color: "#FC1503" }}>videos</span>
         </Typography>
 
-        <Videos  />
+        <Videos  videos={videos} />
       </Box>
     </Stack>
   );
