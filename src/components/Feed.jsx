@@ -9,7 +9,6 @@ const Feed = () => {
   const [videos, setVideos] = useState([]);
 
 
-  console.log('cccc',videos)
   
   useEffect(() => {
     setVideos(null);
